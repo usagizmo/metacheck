@@ -26,6 +26,7 @@ Set the list of URLs to be checked in `settings.js`.
 
 ```js
 module.exports = {
+  basicAuth: false,
   urlList: [
     'https://example.com',
   ],

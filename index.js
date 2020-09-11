@@ -4,7 +4,7 @@ const base64 = require('base-64')
 const fetch = require('node-fetch')
 const cheerio = require('cheerio')
 require('dotenv').config()
-const { urlList } = require('./settings')
+const { basicAuth, urlList } = require('./settings')
 
 global.Headers = fetch.Headers
 
@@ -26,9 +26,13 @@ const state = {
   urlList,
 }
 
-const headers = new Headers({
-  Authorization: 'Basic ' + base64.encode(process.env.USERNAME + ':' + process.env.PASSWORD),
-})
+const headers = new Headers(
+  basicAuth
+    ? {
+        Authorization: 'Basic ' + base64.encode(process.env.USERNAME + ':' + process.env.PASSWORD),
+      }
+    : {}
+)
 
 const utils = {
   log: (state, text) => {
