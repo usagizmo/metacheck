@@ -42,7 +42,7 @@ const utils = {
   to32: (text) => `${text}                                `.slice(0, 32),
   logContent: (state, $, sel) => utils.log(state, `${utils.to32(sel)} ${$(sel).text()}`),
   logLink: (state, $, rel) => {
-    const sel = `[rel="${rel}"]`
+    const sel = `link[rel="${rel}"]`
     utils.log(state, `${utils.to32(sel)} ${$(sel).attr('href')}`)
   },
   logMeta: (state, $, attr, prop) => {
