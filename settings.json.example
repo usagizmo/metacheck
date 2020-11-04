@@ -1,0 +1,6 @@
+{
+  "basicAuth": false,
+  "username": "",
+  "password": "",
+  "urlList": ["https://example.com"]
+}

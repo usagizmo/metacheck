@@ -22,26 +22,19 @@ It also supports basic authentication.
 
 ## Settings
 
-Set the list of URLs to be checked in `settings.js`.
-
-```js
-module.exports = {
-  basicAuth: false,
-  urlList: [
-    'https://example.com',
-  ],
-}
-```
-
-If you need basic authentication, set it in `.env`.
+Set the basic authentication information and request URLs in settings.json
 
 ```bash
 yarn setup
 # => Copy .env.example to .env
 
-cat .env
-# USERNAME=
-# ASSWORD=
+cat settings.json
+# {
+#   "basicAuth": false,
+#   "username": "",
+#   "password": "",
+#   "urlList": ["https://example.com"]
+# }
 ```
 
 ## Execute
